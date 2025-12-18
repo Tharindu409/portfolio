@@ -1,10 +1,16 @@
-import Image from "next/image";
+import React from 'react'
+import Home from '../components/Helper/Home/Home';
 
-export default function Home() {
+const Homepage = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
+    <Home/>
+  )
+};
 
-       hello tharindu's portfolio
-    </div>
-  );
-}
+export default Homepage;
+
+//localhost:3000/
+//localhost:3000/about
+//localhost:3000/about/team
+//localhost:3000/about/team/tharindu
+
