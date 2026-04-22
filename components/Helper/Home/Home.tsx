@@ -5,7 +5,6 @@ import Services from './Services/Services'
 import Resume from './Resume/Resume'
 import Projects from '../Home/Projects/Projects'
 import Skills from './Skills/Skills'
-import Blog from './Blog/Blog'
 import Contact from './Contact/Contact'
 
 import AOS from 'aos';
@@ -37,7 +36,6 @@ useEffect(()=>{
       <Resume/>
       <Projects/>
       <Skills/>
-      <Blog/>
       <Contact/>
 
     </div>

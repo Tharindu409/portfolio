@@ -24,11 +24,7 @@ export const Navlink = [
    url:'#',
    label:"Skills",
     },
-    {
-   id:6,
-   url:'#',
-   label:"Testimonials",
-    },
+    // Testimonials link removed
     {
    id:7,
    url:'#',
