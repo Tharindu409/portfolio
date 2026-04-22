@@ -6,7 +6,7 @@ import Resume from './Resume/Resume'
 import Projects from '../Home/Projects/Projects'
 import Skills from './Skills/Skills'
 import Contact from './Contact/Contact'
-
+import AboutPage from './About/About';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 
@@ -32,11 +32,13 @@ useEffect(()=>{
   return (
     <div className='overflow-hidden '>
       <Hero/>
+      <AboutPage/>
       <Services/>
       <Resume/>
       <Projects/>
       <Skills/>
       <Contact/>
+
 
     </div>
   )

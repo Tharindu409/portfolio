@@ -5,6 +5,11 @@ export const Navlink = [
    label:"Home",
     },
     {
+   id:8,
+   url:'/about',
+   label:"About",
+    },
+    {
    id:2,
    url:'#',
    label:"Services",

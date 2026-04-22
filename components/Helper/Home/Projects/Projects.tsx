@@ -97,7 +97,7 @@ export default function Projects() {
               exit={{ opacity: 0 }}
             >
               <motion.div
-                className="bg-[#111] w-[90%] md:w-[600px] p-6 rounded-xl border border-white/20 relative z-[10001]"
+                className="bg-[#111] w-[95%] max-w-[350px] md:max-w-[500px] p-6 rounded-xl border border-white/20 relative z-[10001]"
                 initial={{ scale: 0.8 }}
                 animate={{ scale: 1 }}
                 exit={{ scale: 0.8 }}
