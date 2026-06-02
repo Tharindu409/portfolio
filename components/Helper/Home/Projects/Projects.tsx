@@ -53,7 +53,7 @@ export default function Projects() {
       category: "Full-Stack Web Application",
       image: "/images/smart-campus.png",
       description:
-        "A comprehensive full-stack web application designed to streamline campus operations and enhance the student and staff experience. Features include intelligent campus management, role-based user authentication, real-time analytics dashboard, and responsive design optimized for all devices.",
+        "A comprehensive full-stack web application designed to streamline campus operations and enhance the student and staff experience.",
       technologies: ["React", "Vite", "JavaScript", "Java", "Spring Boot", "REST APIs", "CSS"],
       github: "https://github.com/Tharindu409/Smart-Campus",
       live: "#",
