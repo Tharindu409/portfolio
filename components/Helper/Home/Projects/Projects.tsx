@@ -49,14 +49,14 @@ export default function Projects() {
       live: "#",
     },
     {
-      title: "Smart Campus",
+      title: "Campus-resource-management-Hub",
       category: "Full-Stack Web Application",
       image: "/images/smart-campus.png",
       description:
         "A comprehensive full-stack web application designed to streamline campus operations and enhance the student and staff experience.",
       technologies: ["React", "Vite", "JavaScript", "Java", "Spring Boot", "REST APIs", "CSS"],
-      github: "https://github.com/Tharindu409/Smart-Campus",
-      live: "#",
+      github: "https://github.com/Tharindu409/Campus-resource-management-Hub",
+      live: "https://campus-management-hub.vercel.app/",
     },
   ];
 
