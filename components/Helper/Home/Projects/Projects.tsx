@@ -147,10 +147,22 @@ export default function Projects() {
                   <a
                     href={modal.github}
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="px-4 py-2 bg-white/10 text-white border border-white/20 rounded-lg hover:bg-white hover:text-black transition"
                   >
                     🔗 GitHub
                   </a>
+
+                  {modal.title === "Campus-resource-management-Hub" && modal.live && modal.live !== "#" && (
+                    <a
+                      href={modal.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 bg-cyan-300 text-black rounded-lg hover:opacity-90 transition"
+                    >
+                      🌐 Live
+                    </a>
+                  )}
                 </div>
               </motion.div>
             </motion.div>
