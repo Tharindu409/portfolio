@@ -54,9 +54,19 @@ export default function Projects() {
       image: "/images/smart-campus.png",
       description:
         "A comprehensive full-stack web application designed to streamline campus operations and enhance the student and staff experience.",
-      technologies: ["React", "Vite", "JavaScript", "Java", "Spring Boot", "REST APIs", "CSS"],
+      technologies: ["React", "Vite", "JavaScript", "Java", "Spring Boot", "REST APIs", "tailwindCSS"],
       github: "https://github.com/Tharindu409/Campus-resource-management-Hub",
       live: "https://campus-management-hub.vercel.app/",
+    },
+    {
+      title: "Uni Connect Club and Event Management Sytem",
+      category: "Full-Stack Web Application",
+      image: "/images/uniconnect_image.png",
+      description:
+         "Uni Connect is a comprehensive club and event management system designed to streamline the organization and participation in university clubs and events.",
+      technologies:  ["React", "Vite", "JavaScript", "REST APIs", "TailwindCSS", "Node.js", "Express", "MongoDB","jwt authentication"],
+      github: "https://github.com/KaveeshaEkanayaka01/UniConnect.git",
+      live: "https://uniconnectwebapp.vercel.app/",
     },
      {
       title: "Zen habit tracker",
@@ -76,7 +86,8 @@ export default function Projects() {
          "user-friendly Android app developed in Kotlin. The app offers workout tracking, goal setting, and progress monitoring that follows the 60-30-10 color rule.",
       technologies:  ["Kotlin", "Android Studio"],
       github: "https://github.com/Tharindu409/Fitness-master-Kotlin-app",
-      live: "#"}
+      live: "#"},
+      
   ];
 
   return (
@@ -142,8 +153,8 @@ export default function Projects() {
                 <Image
                   src={modal.image}
                   alt={modal.title}
-                  width={600}
-                  height={350}
+                  width={500}
+                  height={250}
                   className="rounded-lg"
                 />
 
@@ -172,7 +183,8 @@ export default function Projects() {
                     🔗 GitHub
                   </a>
 
-                  {modal.title === "Campus-resource-management-Hub" && modal.live && modal.live !== "#" && (
+                  {modal.title === "Campus-resource-management-Hub" && modal.live && modal.live !== "#" && 
+                   (
                     <a
                       href={modal.live}
                       target="_blank"
@@ -182,6 +194,20 @@ export default function Projects() {
                       🌐 Live
                     </a>
                   )}
+
+                   {
+                  modal.title === "Uni Connect Club and Event Management Sytem" && modal.live && modal.live !== "#" &&
+                   (
+                    <a
+                      href={modal.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 bg-cyan-300 text-black rounded-lg hover:opacity-90 transition"
+                    >
+                      🌐 Live
+                    </a>
+                  )}  
+
                 </div>
               </motion.div>
             </motion.div>
