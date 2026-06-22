@@ -58,6 +58,25 @@ export default function Projects() {
       github: "https://github.com/Tharindu409/Campus-resource-management-Hub",
       live: "https://campus-management-hub.vercel.app/",
     },
+     {
+      title: "Zen habit tracker",
+      category: "Mobile Application",
+      image: "/images/zen_habi.png",
+      description:
+        "A mobile application built with Kotlin for tracking daily habits and building positive routines.",
+      technologies:  ["Kotlin", "Android Studio", "SharedPreferences", "Material Design"],
+      github: "https://github.com/Tharindu409/Zen-_Habit_Tracker",
+      live: "#",
+    },
+    {
+      title: "Fitness Master kotlin Mobile application",
+      category: "Mobile Application",
+      image: "/images/fitness.png",
+      description:
+         "user-friendly Android app developed in Kotlin. The app offers workout tracking, goal setting, and progress monitoring that follows the 60-30-10 color rule.",
+      technologies:  ["Kotlin", "Android Studio"],
+      github: "https://github.com/Tharindu409/Fitness-master-Kotlin-app",
+      live: "#"}
   ];
 
   return (
