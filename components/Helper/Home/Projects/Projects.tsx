@@ -87,6 +87,15 @@ export default function Projects() {
       technologies:  ["Kotlin", "Android Studio"],
       github: "https://github.com/Tharindu409/Fitness-master-Kotlin-app",
       live: "#"},
+    {
+      title: "Movie Planet MERN Stack web application",
+      category: "Web Application",
+      image: "/images/movie_planet.png",
+      description:
+         "A MERN stack web application for browsing and discovering movies with user reviews and ratings.",
+      technologies:  ["Mern","TMDb API","GoogleLogin"],
+      github: "https://github.com/Tharindu409/Movie-Planet",
+      live: "https://movie-planet-gold.vercel.app"},
       
   ];
 
@@ -197,6 +206,18 @@ export default function Projects() {
 
                    {
                   modal.title === "Uni Connect Club and Event Management Sytem" && modal.live && modal.live !== "#" &&
+                   (
+                    <a
+                      href={modal.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 bg-cyan-300 text-black rounded-lg hover:opacity-90 transition"
+                    >
+                      🌐 Live
+                    </a>
+                  )}  
+                  {
+                  modal.title === "Movie Planet MERN Stack web application" && modal.live && modal.live !== "#" &&
                    (
                     <a
                       href={modal.live}
