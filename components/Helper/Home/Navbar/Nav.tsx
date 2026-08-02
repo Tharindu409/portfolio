@@ -24,8 +24,8 @@ const Nav = ({ openNav }: Props) => {
   };
 
   return (
-    <div className={`fixed w-full z-[10000] transition-all duration-200 ${navBg ? 'bg-[#0f142ed9] shadow-md' : 'bg-transparent'} h-[12vh]`}>
-      <div className="flex items-center h-full justify-between w-[90%] mx-auto">
+    <div className={`fixed w-full z-10000 transition-all duration-200 ${navBg ? 'bg-[#0f142ed9] shadow-md' : 'bg-transparent'} h-[12vh]`}>
+      <div className="flex items-center h-full justify-between w-[92%] mx-auto gap-3">
 
         {/* Logo */}
         <div className="flex items-center space-x-2">
@@ -51,18 +51,32 @@ const Nav = ({ openNav }: Props) => {
         </div>
 
         {/* Buttons */}
-        <div className='flex items-center space-x-4'>
+        <div className='flex items-center gap-3 shrink-0'>
           {/* CV button */}
-          <button className="mt-4 px-4 py-2 bg-blue-800 hover:bg-blue-900 text-white text-sm font-semibold rounded-lg flex items-center gap-2 transition-all duration-300">
+          <button className="hidden sm:flex mt-4 px-4 py-2 bg-blue-800 hover:bg-blue-900 text-white text-sm font-semibold rounded-lg items-center gap-2 transition-all duration-300 whitespace-nowrap">
             <BiDownload className="w-4 h-4" />
             Download CV
           </button>
 
+          <button
+            type="button"
+            aria-label="Download CV"
+            className="flex sm:hidden items-center justify-center mt-4 h-11 w-11 rounded-lg bg-blue-800 text-white transition-colors duration-300 hover:bg-blue-900"
+          >
+            <BiDownload className="w-4 h-4" />
+          </button>
+
           {/* Burger menu */}
-          <HiBars3BottomRight
+          <button
+            type="button"
             onClick={openNav}
-            className='w-8 h-8 cursor-pointer text-white lg:hidden'
-          />
+            aria-label="Open mobile navigation"
+            className="mt-4 flex h-11 w-11 items-center justify-center rounded-lg text-white transition-colors duration-300 hover:bg-white/10 lg:hidden"
+          >
+            <HiBars3BottomRight
+              className='h-8 w-8'
+            />
+          </button>
         </div>
 
       </div>

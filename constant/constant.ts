@@ -1,38 +1,38 @@
 export const Navlink = [
     {
    id:1,
-   url:'#',
+    url:'home',
    label:"Home",
     },
     {
    id:8,
-   url:'/about',
+    url:'about',
    label:"About",
     },
     {
    id:2,
-   url:'#',
+    url:'service',
    label:"Services",
     },
     {
    id:3,
-   url:'#',
+    url:'resume',
    label:"Resume",
     },
     {
    id:4,
-   url:'#',
-   label:"Works",
+    url:'projects',
+    label:"Projects",
     },
     {
    id:5,
-   url:'#',
+    url:'skills',
    label:"Skills",
     },
     // Testimonials link removed
     {
    id:7,
-   url:'#',
+    url:'contact',
    label:"Contact",
     }
 

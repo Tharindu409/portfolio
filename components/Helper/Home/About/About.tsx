@@ -4,7 +4,7 @@ import { BsLinkedin, BsGithub } from "react-icons/bs";
 
 export default function AboutPage() {
   return (
-    <section className="min-h-screen bg-[#0a0a0a] text-white px-6 py-20">
+    <section id="about" className="min-h-screen bg-[#0a0a0a] text-white px-6 py-20">
       <div className="max-w-3xl mx-auto">
 
         {/* Heading */}

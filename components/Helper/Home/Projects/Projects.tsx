@@ -15,7 +15,7 @@ type Project = {
 };
 
 export default function Projects() {
-  const [modal, setModal] = useState<Project | null>(null); // Fix: state can be Project or null
+  const [modal, setModal] = useState<Project | null>(null);
 
   const projects: Project[] = [
     {
@@ -100,135 +100,171 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects">
-      <div className="pt-16 pb-20">
-        <h1 className="text-center text-3xl md:text-5xl font-bold text-white">
-          Recent <span className="text-cyan-300">Projects</span>
-        </h1>
+    <section id="projects" className="relative py-20 sm:py-24">
+      <div className="absolute inset-0 -z-10 transparent_35%),linear-gradient(180deg,rgba(255,255,255,0.03),transparent_35%)]" />
 
-        {/* Cards Grid */}
+      <div className="mx-auto w-[90%] max-w-7xl">
+        <div className="mx-auto max-w-2xl text-center">
+           
+          <h1 className="mt-4 text-3xl font-bold text-white md:text-5xl">
+            Recent <span className="text-cyan-300">Projects</span>
+          </h1>
+           
+        </div>
+
         <div
-          className="w-[85%] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-14"
+          className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3"
           data-aos="fade-up"
           data-aos-anchor-placement="top-center"
           data-aos-delay="0"
         >
           {projects.map((p, index) => (
-            <motion.div
-              key={index}
-              className="bg-white/10 border border-white/20 rounded-xl p-3 cursor-pointer"
-              whileHover={{ scale: 1.05, y: -5 }}
-              transition={{ type: "spring", stiffness: 200 }}
-              onClick={() => setModal(p)} // Now correctly typed
+            <motion.button
+              key={p.title}
+              type="button"
+              className="group overflow-hidden rounded-2xl border border-white/10 bg-white/6 text-left shadow-[0_18px_60px_rgba(0,0,0,0.22)] backdrop-blur-sm transition-colors duration-300 hover:border-cyan-300/30"
+              whileHover={{ y: -6, scale: 1.01 }}
+              transition={{ type: "spring", stiffness: 220, damping: 22 }}
+              onClick={() => setModal(p)}
             >
-              <Image
-                src={p.image}
-                alt={p.title}
-                width={400}
-                height={250}
-                className="rounded-lg"
-              />
-              <h2 className="text-lg md:text-xl text-white font-semibold mt-3">
-                {p.title}
-              </h2>
-              <p className="text-white/70 text-sm md:text-base">{p.category}</p>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Modal */}
-        <AnimatePresence>
-          {modal && (
-            <motion.div
-              className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-[10000]"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-            >
-              <motion.div
-                className="bg-[#111] w-[95%] max-w-[350px] md:max-w-[500px] p-6 rounded-xl border border-white/20 relative z-[10001]"
-                initial={{ scale: 0.8 }}
-                animate={{ scale: 1 }}
-                exit={{ scale: 0.8 }}
-              >
-                {/* Close button */}
-                <button
-                  className="absolute -top-4 -right-4 text-3xl text-white hover:text-cyan-300 z-[10002] bg-[#111] rounded-full w-10 h-10 flex items-center justify-center shadow-lg"
-                  onClick={() => setModal(null)}
-                >
-                  ✕
-                </button>
-
+              <div className="relative aspect-16/10 overflow-hidden">
                 <Image
-                  src={modal.image}
-                  alt={modal.title}
-                  width={500}
-                  height={250}
-                  className="rounded-lg"
+                  src={p.image}
+                  alt={p.title}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
                 />
+                <div className="absolute inset-0 bg-linear-to-t from-[#04111f] via-[#04111f]/25 to-transparent" />
+                <div className="absolute left-4 top-4 rounded-full border border-white/15 bg-black/35 px-3 py-1 text-xs font-medium text-white/85 backdrop-blur">
+                  {p.category}
+                </div>
+                <div className="absolute bottom-4 left-4 right-4">
+                  <p className="text-xs uppercase tracking-[0.22em] text-cyan-200/80">
+                    {index + 1 < 10 ? `0${index + 1}` : index + 1}
+                  </p>
+                </div>
+              </div>
 
-                <h2 className="text-2xl text-white font-bold mt-4">{modal.title}</h2>
-                <p className="text-white/70 mt-3">{modal.description}</p>
+              <div className="space-y-4 p-5">
+                <div>
+                  <h2 className="text-lg font-semibold text-white md:text-xl">
+                    {p.title}
+                  </h2>
+                  <p className="mt-2 line-clamp-3 text-sm leading-6 text-white/65">
+                    {p.description}
+                  </p>
+                </div>
 
-                <h3 className="text-cyan-300 font-semibold mt-5">Technologies Used</h3>
-                <div className="flex flex-wrap gap-2 mt-2">
-                  {modal.technologies.map((tech, i) => (
+                <div className="flex flex-wrap gap-2">
+                  {p.technologies.slice(0, 4).map((tech) => (
                     <span
-                      key={i}
-                      className="px-3 py-1 bg-white/10 border border-white/20 text-white rounded-md text-sm"
+                      key={tech}
+                      className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-white/80"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                <div className="flex gap-4 mt-6">
-                  <a
-                    href={modal.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-4 py-2 bg-white/10 text-white border border-white/20 rounded-lg hover:bg-white hover:text-black transition"
-                  >
-                    🔗 GitHub
-                  </a>
+                <div className="flex items-center justify-between pt-1 text-sm text-cyan-200">
+                  <span>View details</span>
+                  <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                </div>
+              </div>
+            </motion.button>
+          ))}
+        </div>
 
-                  {modal.title === "Campus-resource-management-Hub" && modal.live && modal.live !== "#" && 
-                   (
-                    <a
-                      href={modal.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-4 py-2 bg-cyan-300 text-black rounded-lg hover:opacity-90 transition"
-                    >
-                      🌐 Live
-                    </a>
-                  )}
+        <AnimatePresence>
+          {modal && (
+            <motion.div
+              className="fixed inset-0 z-10000 flex items-center justify-center bg-black/75 px-4 py-8 backdrop-blur-sm"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setModal(null)}
+            >
+              <motion.div
+                className="relative w-full max-w-3xl overflow-hidden rounded-3xl border border-white/10 bg-[#071727] shadow-2xl"
+                initial={{ scale: 0.92, y: 24 }}
+                animate={{ scale: 1, y: 0 }}
+                exit={{ scale: 0.96, y: 18 }}
+                transition={{ type: "spring", stiffness: 240, damping: 24 }}
+                onClick={(event) => event.stopPropagation()}
+              >
+                <button
+                  type="button"
+                  className="absolute right-4 top-4 z-10 rounded-full border border-white/10 bg-black/35 px-3 py-2 text-sm font-medium text-white transition hover:bg-black/55"
+                  onClick={() => setModal(null)}
+                  aria-label="Close project details"
+                >
+                  Close
+                </button>
 
-                   {
-                  modal.title === "Uni Connect Club and Event Management Sytem" && modal.live && modal.live !== "#" &&
-                   (
-                    <a
-                      href={modal.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-4 py-2 bg-cyan-300 text-black rounded-lg hover:opacity-90 transition"
-                    >
-                      🌐 Live
-                    </a>
-                  )}  
-                  {
-                  modal.title === "Movie Planet MERN Stack web application" && modal.live && modal.live !== "#" &&
-                   (
-                    <a
-                      href={modal.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-4 py-2 bg-cyan-300 text-black rounded-lg hover:opacity-90 transition"
-                    >
-                      🌐 Live
-                    </a>
-                  )}  
+                <div className="grid gap-0 md:grid-cols-[1.1fr_0.9fr]">
+                  <div className="relative min-h-60 md:min-h-full">
+                    <Image
+                      src={modal.image}
+                      alt={modal.title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                    <div className="absolute inset-0 bg-linear-to-t from-[#071727] via-transparent to-transparent" />
+                  </div>
 
+                  <div className="space-y-5 p-6 sm:p-8">
+                    <div>
+                      <p className="text-sm uppercase tracking-[0.2em] text-cyan-200/80">
+                        {modal.category}
+                      </p>
+                      <h2 className="mt-2 text-2xl font-bold text-white sm:text-3xl">
+                        {modal.title}
+                      </h2>
+                      <p className="mt-3 text-sm leading-7 text-white/70 sm:text-base">
+                        {modal.description}
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-cyan-200/80">
+                        Technologies
+                      </h3>
+                      <div className="mt-3 flex flex-wrap gap-2">
+                        {modal.technologies.map((tech) => (
+                          <span
+                            key={tech}
+                            className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-white/85"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="flex flex-wrap gap-3 pt-2">
+                      <a
+                        href={modal.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-medium text-white transition hover:border-cyan-300/40 hover:bg-cyan-300/10"
+                      >
+                        GitHub
+                      </a>
+
+                      {modal.live && modal.live !== "#" && (
+                        <a
+                          href={modal.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="rounded-full bg-cyan-300 px-5 py-3 text-sm font-semibold text-black transition hover:opacity-90"
+                        >
+                          Live Demo
+                        </a>
+                      )}
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             </motion.div>

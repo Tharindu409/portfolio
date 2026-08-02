@@ -1,5 +1,4 @@
 import { Navlink } from '@/constant/constant'
-import Link from 'next/link';
 import React from 'react'
 import { CgClose } from 'react-icons/cg';
  
@@ -11,6 +10,13 @@ type Props={
 
 const MobileNav = ({closeNav,showNav}:Props) => {
   const navOpen = showNav ? "translate-x-0":"translate-x-[100%]";
+
+  const handleNavigate = (id: string) => {
+    const section = document.getElementById(id);
+    section?.scrollIntoView({ behavior: 'smooth' });
+    closeNav();
+  };
+
   return (
     <div>
        {/* overlay */}
@@ -19,15 +25,18 @@ const MobileNav = ({closeNav,showNav}:Props) => {
 
        {/*navlinks */}
 
-       <div className={`text-white ${navOpen} fixed justify-center flex flex-col h-full treansform transition-all
-       duration-500 delay-300 w-[88%] sm:w-[60%] bg-cyan-800 space-y-6 z-[100050] right-0`}>
+      <div className={`text-white ${navOpen} fixed justify-center flex flex-col h-full treansform transition-all
+      duration-500 delay-300 w-[88%] sm:w-[60%] bg-cyan-800 space-y-6 z-100050 right-0`}>
         {Navlink.map((link) => {
           return (
-          <Link key = {link.id} href={link.url} scroll={false}>
-            <p className='text-white w-fit text-xl ml-12 border-b-[1.5px] pb-1 border-white sm:text-2xl font-medium hover:text-cyan-300'>
-              {link.label}
-            </p>
-          </Link>
+          <button
+            key={link.id}
+            type="button"
+            onClick={() => handleNavigate(link.url)}
+            className='text-left text-white w-fit text-xl ml-12 border-b-[1.5px] pb-1 border-white sm:text-2xl font-medium hover:text-cyan-300'
+          >
+            {link.label}
+          </button>
           );
         })}
         
