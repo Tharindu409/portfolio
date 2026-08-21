@@ -46,7 +46,7 @@ export default function Projects() {
         "A MERN stack art gallery platform where artists can upload and users can buy artwork.",
       technologies: ["React", "Node.js", "MongoDB", "Express", "JWT", "TailwindCSS"],
       github: "https://github.com/Tharindu409/Art_Gallery",
-      live: "#",
+      live: "https://art-gallery-three-mauve.vercel.app",
     },
     {
       title: "Campus-resource-management-Hub",
