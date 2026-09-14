@@ -18,26 +18,7 @@ export default function Projects() {
   const [modal, setModal] = useState<Project | null>(null);
 
   const projects: Project[] = [
-    {
-      title: "Ride Ready – Car Rental System",
-      category: "Web Application",
-      image: "/images/php1.png",
-      description:
-        "A complete modern car rental system with bookings, admin dashboard, vehicle management, and user authentication.",
-      technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
-      github: "https://github.com/Tharindu409/Ride_Ready_car_rental",
-      live: "#",
-    },
-    {
-      title: "full-stack Java web application",
-      category: "Web Application",
-      image: "/images/cyber.png",
-      description:
-        "A full-stack Java web application built using Servlets and JSP, designed to provide a secure and modern online banking experience. The system allows users to register, log in, manage their accounts, and perform transactions such as money transfers and viewing transaction history.",
-      technologies: ["Java", "MySQL", "TailwindCSS", "JWT"],
-      github: "https://github.com/Tharindu409/Cybertrust-bank",
-      live: "#",
-    },
+   
     {
       title: "CYLON GALLERIA by janith weerasinghe",
       category: "MERN Stack web project",
@@ -57,6 +38,16 @@ export default function Projects() {
       technologies: ["React", "Vite", "JavaScript", "Java", "Spring Boot", "REST APIs", "tailwindCSS"],
       github: "https://github.com/Tharindu409/Campus-resource-management-Hub",
       live: "https://campus-management-hub.vercel.app/",
+    },
+    {
+      title: "ERP and HR management system",
+      category: "Full-Stack ERP System",
+      image: "/images/real.png",
+      description:
+        "An ERP and HR management system for streamlining employee, department, attendance, leave, payroll, and reporting workflows.",
+      technologies: ["React","TypeScript","ASP.NET Core","C#"],
+      github: "https://github.com/Tharindu409/ERP-system",
+      live: "https://erp-system-lb31.onrender.com",
     },
     {
       title: "Uni Connect Club and Event Management Sytem",
@@ -87,6 +78,26 @@ export default function Projects() {
       technologies:  ["Kotlin", "Android Studio"],
       github: "https://github.com/Tharindu409/Fitness-master-Kotlin-app",
       live: "#"},
+       {
+      title: "Ride Ready – Car Rental System",
+      category: "Web Application",
+      image: "/images/php1.png",
+      description:
+        "A complete modern car rental system with bookings, admin dashboard, vehicle management, and user authentication.",
+      technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
+      github: "https://github.com/Tharindu409/Ride_Ready_car_rental",
+      live: "#",
+    },
+    {
+      title: "full-stack Java web application",
+      category: "Web Application",
+      image: "/images/cyber.png",
+      description:
+        "A full-stack Java web application built using Servlets and JSP, designed to provide a secure and modern online banking experience. The system allows users to register, log in, manage their accounts, and perform transactions such as money transfers and viewing transaction history.",
+      technologies: ["Java", "MySQL", "TailwindCSS", "JWT"],
+      github: "https://github.com/Tharindu409/Cybertrust-bank",
+      live: "#",
+    },
     {
       title: "Movie Planet MERN Stack web application",
       category: "Web Application",
