@@ -57,7 +57,7 @@ export default function Projects() {
          "Uni Connect is a comprehensive club and event management system designed to streamline the organization and participation in university clubs and events.",
       technologies:  ["React", "Vite", "JavaScript", "REST APIs", "TailwindCSS", "Node.js", "Express", "MongoDB","jwt authentication"],
       github: "https://github.com/Tharindu409/UniConnect-Full-Stack-Application",
-      live: "https://uniconnectwebapp.vercel.app/",
+      live: "https://uniconnect-full-stack-application-1.onrender.com",
     },
      {
       title: "Zen habit tracker",
